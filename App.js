@@ -2,7 +2,6 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
-
 import HomeScreen from "./screens/HomeScreen";
 import GameScreen from "./screens/GameScreen";
 import { GameProvider } from "./context/GameContext";
@@ -18,12 +17,12 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: "Rock, Paper, Scissors" }}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
             name="Game"
             component={GameScreen}
-            options={{ title: "Game Time!" }}
+            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>

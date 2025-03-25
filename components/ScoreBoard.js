@@ -1,28 +1,43 @@
-import { StyleSheet } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import colors from "../constants/colors";
 
-export function ScoreBoard({ score }) {
+export function ScoreBoard({ playerScore, computerScore }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.score}>Player: {playerScore}</Text>
-      <Text style={styles.score}>Computer: {computerScore}</Text>
+      <Text style={styles.scoreLeft}>{playerScore}</Text>
+      <Text style={styles.scoreRight}>{computerScore}</Text>
     </View>
   );
 }
 
-const ScoreBoardStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: colors.secondary,
     paddingVertical: 15,
-    backgroundColor: "#f1f1f1",
-    borderRadius: 10,
+    paddingHorizontal: 25,
+    borderRadius: 15,
     marginVertical: 15,
     elevation: 5,
   },
-  score: {
+  scoreLeft: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#333",
+    color: "#1B4F72",
+    flex: 1,
+    textAlign: "left",
+    paddingRight: 10,
+  },
+  scoreRight: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#922B21",
+    flex: 1,
+    textAlign: "right",
+    paddingLeft: 10,
   },
 });
+
+export default ScoreBoard;

@@ -1,9 +1,10 @@
-import { StyleSheet } from "react-native";
-import { TouchableOpacity, Text } from "react-native";
+import React from "react";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import colors from "../constants/colors";
 
-export function Button() {
+export function Button({ title, onPress, style }) {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
@@ -23,5 +24,6 @@ export const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
+    fontFamily: "Poppins-Regular",
   },
 });
